@@ -14,7 +14,7 @@ Possible other technologies will include:
 
 * Hibernate for ORM ( 4.3.6.Final )
 * Jersey for RESTful services
-* AngularJS for client side developemnt
+* AngularJS for client side development
 * Google Maps API to display geographical locations
 * BootstrapJS for interface design
 
