@@ -19,3 +19,11 @@ Possible other technologies will include:
 * BootstrapJS for interface design
 
 List is open for additions/augmentations!
+
+To run application:
+
+* Navigate to project TLD ( the place where pom.xml is located )
+* Run: mvn install jetty:run.
+* Navigate browser to: http://localhost:8080/geography
+
+You should see a placeholder index page.
