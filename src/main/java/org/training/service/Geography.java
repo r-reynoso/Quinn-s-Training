@@ -1,5 +1,5 @@
 package org.training.service;
 
-public class CityDao {
+public interface Geography {
 
 }
