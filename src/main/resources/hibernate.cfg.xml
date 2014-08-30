@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+
+<hibernate-configuraiton>
+	<session-factory name="java:hibernate/SessionFactory">
+		<property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+		<property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+		<property name="hibernate.connection.url">jdbc:mysql://localhost/geography</property>
+		<property name="hibernate.connection.username">geography</property>
+		<property name="hibernate.connection.password">geo123</property>
+	</session-factory>
+</hibernate-configuraiton>

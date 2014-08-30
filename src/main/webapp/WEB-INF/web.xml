@@ -1,6 +1,12 @@
 <web-app version="3.0"
     xmlns="http://java.sun.com/xml/ns/javaee"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    
+    <context-param>
+    	<param-name>contextConfigLocation</param-name>
+    	<param-value>/WEB-INF/applicationContext*.xml</param-value>
+    </context-param>
+    
     <servlet>
         <servlet-name>javax.ws.rs.core.Application</servlet-name>
     </servlet>
