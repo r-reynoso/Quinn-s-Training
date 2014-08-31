@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	   					   http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="geographyService" class="org.training.service.impl.GeographyServiceImpl" />
+
+	<bean id="cityResource" class="org.training.resource.CityResource">
+		<property name="geographyService" ref="geographyService" />
+	</bean>
+
+	<!-- context:component-scan base-package="org.training" /-->
+
+</beans>

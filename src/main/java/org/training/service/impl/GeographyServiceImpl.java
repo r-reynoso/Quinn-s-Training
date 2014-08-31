@@ -1,5 +1,7 @@
 package org.training.service.impl;
 
-public class GeographyServiceImpl {
+import org.training.service.GeographyService;
+
+public class GeographyServiceImpl implements GeographyService{
 
 }
