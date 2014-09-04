@@ -8,7 +8,6 @@ public class GeographyServiceImpl implements GeographyService {
 
 	private static final Logger LOG = Logger.getLogger( GeographyServiceImpl.class ); 
 	
-	@Override
 	public void addCity( City city ) {
 		LOG.debug( "Adding a city named '" + city.getName() + "' in the GeographyService!");
 	}

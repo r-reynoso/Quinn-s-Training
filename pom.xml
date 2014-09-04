@@ -11,7 +11,9 @@
 		<hibernate.version>4.3.6.Final</hibernate.version>
 		<spring.version>4.0.6.RELEASE</spring.version>
 		<log4j.version>1.2.14</log4j.version>
-		<jackson.version>1.18.1</jackson.version>
+		<jackson.version>1.18.1</jackson.version> 
+		<angularjs.version>1.2.12</angularjs.version>
+		<bootstrap.version>3.1.1</bootstrap.version>
 	</properties>
 
 	<dependencies>
@@ -65,6 +67,16 @@
 			<artifactId>log4j</artifactId>
 			<version>${log4j.version}</version>
 		</dependency>
+		<dependency>
+		    <groupId>org.webjars</groupId>
+		    <artifactId>angularjs</artifactId>
+		    <version>${angularjs.version}</version>
+		</dependency>
+		<dependency>
+		    <groupId>org.webjars</groupId>
+		    <artifactId>bootstrap</artifactId>
+		    <version>${bootstrap.version}</version>
+		</dependency>	
 	</dependencies>
 
 	<build>
