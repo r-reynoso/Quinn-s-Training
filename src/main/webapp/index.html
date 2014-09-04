@@ -3,8 +3,10 @@
 	<head>
 		<title>Geography App</title>
 		
+		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+		
 		<style>
-	      	#map_canvas 
+		   	#map_canvas 
 	      	{
 		        width: 750px;
 		        height: 500px;
@@ -31,14 +33,30 @@
 	<body>
 		
 		<h4>Geography Application Index</h4>
+		
 		<hr />
+		
 		<div>
 			Welcome to the Geography Application.
 		</div>
+		
 		<div>
 			Map of Puerto Rico:
 		</div>
+		
+		<div ng-app="">
+			<p>Type in the beach's name: <input type="text" ng-model="beach"></p>
+			<hr>
+				<button class="btn btn-success" ng-click="editUser('new')">
+	 			<span class="glyphicon glyphicon-user"></span> Submit
+				</button>
+			<hr>
+		</div>
+		
 		<div id="map_canvas"></div>
+							
+		<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.12/angular.min.js"></script>
+		
 	</body>
 	
 </html>
