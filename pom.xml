@@ -77,7 +77,18 @@
 		    <artifactId>bootstrap</artifactId>
 		    <version>${bootstrap.version}</version>
 		</dependency>	
+		<dependency>
+			<groupId>com.google.gwt.google-apis</groupId>
+			<artifactId>gwt-maps</artifactId>
+			<version>1.0.4</version>
+		</dependency>		
 	</dependencies>
+	
+	<scm>
+		<url>
+		http://code.google.com/p/gwt-google-apis/source/browse/
+		</url>
+	</scm>
 
 	<build>
 		<sourceDirectory>src</sourceDirectory>
