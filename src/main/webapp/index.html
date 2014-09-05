@@ -13,7 +13,9 @@
 		        background-color: #CCC;
 	      	}
     	</style>
+    	
     	<script src="https://maps.googleapis.com/maps/api/js"></script>
+    	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.12/angular.min.js"></script>
     	<script>
   			function initialize()
   			{
@@ -26,6 +28,7 @@
         			}  
        			var map = new google.maps.Map(map_canvas, map_options)			
   			}
+  			
   			google.maps.event.addDomListener(window, 'load', initialize);
 		</script>
 	</head>
@@ -55,7 +58,7 @@
 		
 		<div id="map_canvas"></div>
 							
-		<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.12/angular.min.js"></script>
+		
 		
 	</body>
 	
