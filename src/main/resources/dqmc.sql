@@ -5,6 +5,8 @@ CREATE DATABASE `dqmc`;
 
 USE `dqmc`;
 
+GRANT ALL ON dqmc.* TO dqmc@localhost IDENTIFIED BY 'dqmc123';
+
 DROP TABLE IF EXISTS `city`;
 CREATE TABLE `city` (
   `id` INT NOT NULL AUTO_INCREMENT,
