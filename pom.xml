@@ -11,9 +11,11 @@
 		<hibernate.version>4.3.6.Final</hibernate.version>
 		<spring.version>4.0.6.RELEASE</spring.version>
 		<log4j.version>1.2.14</log4j.version>
-		<jackson.version>1.18.1</jackson.version> 
+		<jackson.version>1.18.1</jackson.version>
 		<angularjs.version>1.2.12</angularjs.version>
 		<bootstrap.version>3.1.1</bootstrap.version>
+		<googleMaps.version>1.0.4</googleMaps.version>
+		<junit.version>4.11</junit.version>
 	</properties>
 
 	<dependencies>
@@ -68,22 +70,27 @@
 			<version>${log4j.version}</version>
 		</dependency>
 		<dependency>
-		    <groupId>org.webjars</groupId>
-		    <artifactId>angularjs</artifactId>
-		    <version>${angularjs.version}</version>
+			<groupId>org.webjars</groupId>
+			<artifactId>angularjs</artifactId>
+			<version>${angularjs.version}</version>
 		</dependency>
 		<dependency>
-		    <groupId>org.webjars</groupId>
-		    <artifactId>bootstrap</artifactId>
-		    <version>${bootstrap.version}</version>
-		</dependency>	
+			<groupId>org.webjars</groupId>
+			<artifactId>bootstrap</artifactId>
+			<version>${bootstrap.version}</version>
+		</dependency>
 		<dependency>
 			<groupId>com.google.gwt.google-apis</groupId>
 			<artifactId>gwt-maps</artifactId>
-			<version>1.0.4</version>
-		</dependency>		
+			<version>${googleMaps.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>${junit.version}</version>
+		</dependency>
 	</dependencies>
-	
+
 	<scm>
 		<url>
 		http://code.google.com/p/gwt-google-apis/source/browse/

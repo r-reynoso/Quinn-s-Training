@@ -10,3 +10,8 @@ function initialize() {
 }
 
 google.maps.event.addDomListener( window, 'load', initialize );
+
+angular.module( "dqmc", [] )
+	.controller( "DqmcMain", [ '$scope', function( $scope ) {
+		$scope.testText = "Some Text";
+	}]);
