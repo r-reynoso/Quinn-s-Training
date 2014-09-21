@@ -7,7 +7,9 @@
 	   					http://www.springframework.org/schema/context
 	   					http://www.springframework.org/schema/context/spring-context.xsd">
 	   					
-	<bean id="geographyService" class="org.training.service.impl.GeographyServiceImpl" />
+	<bean id="geographyService" class="org.training.service.impl.GeographyServiceImpl" 
+		init-method="init" destroy-method="destroy"/>
+		
 	<bean id="cityResource" class="org.training.resource.CityResource">
 		<property name="geographyService" ref="geographyService" />
 	</bean>

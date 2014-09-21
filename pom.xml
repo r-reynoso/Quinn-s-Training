@@ -2,7 +2,7 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.training</groupId>
-	<artifactId>geography</artifactId>
+	<artifactId>dqmc</artifactId>
 	<version>1.0.0-SNAPSHOT</version>
 	<packaging>war</packaging>
 
@@ -16,6 +16,7 @@
 		<bootstrap.version>3.1.1</bootstrap.version>
 		<googleMaps.version>1.0.4</googleMaps.version>
 		<junit.version>4.11</junit.version>
+		<mysql.connector.version>5.1.32</mysql.connector.version>
 	</properties>
 
 	<dependencies>
@@ -88,6 +89,11 @@
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
 			<version>${junit.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>${mysql.connector.version}</version>
 		</dependency>
 	</dependencies>
 
