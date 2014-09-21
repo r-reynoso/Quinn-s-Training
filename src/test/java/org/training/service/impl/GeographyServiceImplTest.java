@@ -11,7 +11,6 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.training.model.City;
-import org.training.service.util.DatabaseUtil;
 
 import static org.junit.Assert.*;
 
@@ -53,7 +52,6 @@ public class GeographyServiceImplTest {
 				assertTrue( uuid + " :NOT EQUAL TO: " + uuidFromDb, 
 						uuidFromDb.equals( uuid ) );
 				this.service.removeCity( city );
-				
 			}
 		} catch ( SQLException e ) {
 			e.printStackTrace();
