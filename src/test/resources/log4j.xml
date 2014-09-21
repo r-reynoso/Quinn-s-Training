@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+
+	<appender name="STDOUT" class="org.apache.log4j.ConsoleAppender">
+		<param name="Threshold" value="debug" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d{HH:mm:ss} %p [%t]:%c{3}.%M()%L - %m%n" />
+		</layout>
+	</appender>
+
+	<appender name="springAppender" class="org.apache.log4j.RollingFileAppender">
+		<param name="file" value="/Users/qtpeters/development/github/geography/target/spring.log" />
+		<param name="append" value="true" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d{MM/dd/yyyy HH:mm:ss}  [%t]:%c{5}.%M()%L %m%n" />
+		</layout>
+	</appender>
+
+	<category name="org.springframework">
+		<priority value="info" />
+	</category>
+
+	<category name="org.hibernate">
+		<priority value="info" />
+	</category>
+
+	<root>
+		<priority value="debug" />
+		<appender-ref ref="springAppender" />
+		<appender-ref ref="STDOUT"/>
+	</root>
+	
+</log4j:configuration>
+	
