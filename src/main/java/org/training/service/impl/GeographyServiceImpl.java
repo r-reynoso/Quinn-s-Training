@@ -25,15 +25,15 @@ public class GeographyServiceImpl implements GeographyService {
 	}
 
 	public void addCity( City city ) {
-		LOG.debug( "Adding a city named '" + city.getName() );
-		session.beginTransaction();
+		LOG.debug( "Adding a city, NAME: " + city.getName() );
+		this.session.beginTransaction();
 		this.session.save( city );
 		this.session.getTransaction().commit();
 	}
 	
 	public void removeCity( City city ) {
-		LOG.debug( "Deleting a city named '" + city.getName() );
-		session.beginTransaction();
+		LOG.debug( "Deleting a city, NAME: " + city.getName() );
+		this.session.beginTransaction();
 		this.session.delete( city );
 		this.session.getTransaction().commit();
 	}
