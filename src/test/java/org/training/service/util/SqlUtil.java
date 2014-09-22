@@ -39,8 +39,6 @@ public final class SqlUtil {
 			rs = ps.executeQuery();
 		} catch ( SQLException se ) {
 			se.printStackTrace();
-		} finally {
-			close( conn );
 		}
 		
 		return rs;

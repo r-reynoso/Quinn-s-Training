@@ -17,8 +17,8 @@ import static org.junit.Assert.*;
 
 public class GeographyServiceImplTest {
 
-	private Connection conn;
 	private GeographyServiceImpl service;
+	private Connection conn;
 	
 	@Before
 	public void init() {
@@ -29,17 +29,16 @@ public class GeographyServiceImplTest {
 		} catch (SQLException e) {
 			throw new ExceptionInInitializerError( 
 					"Problem initalizing GeographyService tests: " + e.getMessage() );
-		} finally {
-			SqlUtil.close( conn );
 		}
 	}
 	
 	@After
 	public void destroy() {
-		SqlUtil.close( conn );
 		if ( this.service != null ) {
 			this.service.destroy();
-		}		
+		}
+		
+		SqlUtil.close( conn );
 	}
 	
 	@Test
@@ -49,7 +48,7 @@ public class GeographyServiceImplTest {
 		
 		City city = new City();
 		city.setName( uuid );
-		this.service.addCity(city);
+		this.service.addCity( city );
 
 		ResultSet rs = SqlUtil.executeSqlQuery( "SELECT * FROM city WHERE name= ('" + uuid + "')", conn );
 
