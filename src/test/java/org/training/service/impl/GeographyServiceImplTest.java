@@ -2,7 +2,6 @@ package org.training.service.impl;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.UUID;
@@ -17,6 +16,8 @@ import static org.junit.Assert.*;
 
 public class GeographyServiceImplTest {
 
+	private static String randomCityName = UUID.randomUUID().toString();
+	
 	private GeographyServiceImpl service;
 	private Connection conn;
 	
@@ -44,27 +45,29 @@ public class GeographyServiceImplTest {
 	@Test
 	public void addCityTest() {
 		
-		String uuid = UUID.randomUUID().toString();
-		
 		City city = new City();
-		city.setName( uuid );
+		city.setName( randomCityName );
 		this.service.addCity( city );
 
-		ResultSet rs = SqlUtil.executeSqlQuery( "SELECT * FROM city WHERE name= ('" + uuid + "')", conn );
+		ResultSet rs = SqlUtil.executeSqlQuery( "SELECT * FROM city WHERE name= ('" + randomCityName + "')", conn );
 
-		if ( ! SqlUtil.hasResult( rs ) ) {				
-			fail( "No valid rows in ResultSet, Hibernate failed." );
-		} else {
-			String uuidFromDb = SqlUtil.getString( rs, "name"); 
-			assertTrue( uuid + " :NOT EQUAL TO: " + uuidFromDb, 
-					uuidFromDb.equals( uuid ) );
-			this.service.removeCity( city );
-		}
+		assertTrue( "No valid rows in ResultSet, Hibernate failed.", SqlUtil.hasResult( rs ) );
+		
+		String uuidFromDb = SqlUtil.getString( rs, "name"); 
+		assertTrue( randomCityName + " :NOT EQUAL TO: " + uuidFromDb, 
+				uuidFromDb.equals( randomCityName ) );
+		this.service.removeCity( city );
 	}
 
 	@Test
-	public void removeServiceTest() {
+	public void removeCityTest() {
 		
+		int result = SqlUtil.executeSqlUpdate( "INSERT INTO city (name) values ('" + randomCityName + "')", conn );
+		assertEquals( "Unable to insert row into database.", result, 1 );
+		
+		City city = this.service.getCityByName( randomCityName );
+		assertNotNull( "Was unable to reterieve city: " + randomCityName, city );
+		assertEquals( city.getName(), randomCityName, city.getName() );
 	}
 
 }

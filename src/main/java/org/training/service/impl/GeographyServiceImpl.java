@@ -1,8 +1,12 @@
 package org.training.service.impl;
 
+import java.util.List;
+
 import org.apache.log4j.Logger;
+import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.training.error.ImpossibleQueryResultException;
 import org.training.model.City;
 import org.training.service.GeographyService;
 import org.training.service.util.DatabaseUtil;
@@ -36,5 +40,23 @@ public class GeographyServiceImpl implements GeographyService {
 		this.session.beginTransaction();
 		this.session.delete( city );
 		this.session.getTransaction().commit();
+	}
+	
+	public City getCityByName( String cityName ) {
+		
+		LOG.debug( "Searching for city by name, NAME: " + cityName );
+		
+		Query cityQuery = session.createQuery( "FROM City where name = :name" );
+		cityQuery.setParameter( "name", cityName );
+		
+		List<?> result = cityQuery.list();
+		if ( result.size() > 1 ) {
+			throw new ImpossibleQueryResultException( "Found more than one town by the name " 
+					+ cityName + " in the database.  Application data is probably corrupt." );
+		} else if ( result.size() < 1 ) {
+			return null;
+		}
+		
+		return ( ( City ) result.get( 0 ) );
 	}
 }

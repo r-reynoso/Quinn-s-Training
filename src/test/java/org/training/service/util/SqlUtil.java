@@ -43,6 +43,19 @@ public final class SqlUtil {
 		
 		return rs;
 	}
+
+	public static int executeSqlUpdate( String sql, Connection conn ) {
+		
+		int result = -1;
+		try {
+			PreparedStatement ps = conn.prepareStatement( sql );
+			result = ps.executeUpdate();
+		} catch ( SQLException se ) {
+			se.printStackTrace();
+		}
+		
+		return result;
+	}
 	
 	public static void close( Connection conn ) {
 		try {
