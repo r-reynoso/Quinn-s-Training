@@ -14,4 +14,12 @@ google.maps.event.addDomListener( window, 'load', initialize );
 angular.module( "dqmc", [] )
 	.controller( "DqmcMain", [ '$scope', function( $scope ) {
 		$scope.testText = "Some Text";
-	}]);
+	}])
+   .directive( "dqmcMap", function() {
+      return {
+         scope: {},
+         link: function( scope, element, attrs ) {
+           console.log( "I'm in an AngularJS Directive!" ); 
+         }
+      };
+   });
